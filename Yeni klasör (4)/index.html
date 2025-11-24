@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>İyi ki doğdun, müstakbel karım</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <style>
+    :root{--bg:#0a0a0a; --text:#ffe6f0; --accent:#ff4d84;}
+    *{box-sizing:border-box; margin:0; padding:0;}
+    body{font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background:var(--bg); color:var(--text); overflow-x:hidden;}
+    header{text-align:center; padding:6vh 20px 3vh;}
+    header h1{font-size:clamp(2.2rem,5.5vw,4rem); letter-spacing:2px; color:var(--accent);}
+    .love-text{max-width:760px; margin:50px auto; padding:0 20px; font-size:clamp(1.2rem,2.4vw,1.5rem); line-height:1.9; text-align:center; opacity:.95;}
+    .love-text b{color:var(--accent);}
+    footer{text-align:center; padding:40px 10px 60px; font-size:.9rem; opacity:.6;}
+
+    /* Açılış kalp 10 saniye */
+    #splash{position:fixed; inset:0; z-index:9999; background:radial-gradient(circle at center, #300 0%, var(--bg) 70%); display:flex; align-items:center; justify-content:center; flex-direction:column; animation:fadeOut 2s ease 8s forwards;}
+    .heart{width:100px; height:100px; position:relative; transform:rotate(-45deg); background:var(--accent); animation:beat 1s infinite;}
+    .heart::before,.heart::after{content:''; width:100px; height:100px; position:absolute; background:var(--accent); border-radius:50%;}
+    .heart::before{top:-50px; left:0;}.heart::after{left:50px; top:0;}
+    @keyframes beat{0%,100%{transform:rotate(-45deg) scale(1);} 50%{transform:rotate(-45deg) scale(1.2);}}
+    @keyframes fadeOut{to{opacity:0; visibility:hidden;}}
+    #splash p{margin-top:40px; font-size:clamp(1.5rem,5vw,2.5rem); text-align:center; letter-spacing:1px; opacity:0; animation:textFade 2s ease 3s forwards;}
+    @keyframes textFade{to{opacity:1;}}
+
+    /* Slayt ekranı */
+    #slideScreen{position:fixed; inset:0; background:#000; display:none; z-index:999;}
+    #slideScreen img{width:100%; height:100%; object-fit:contain; animation:slideIn 1s ease;}
+    @keyframes slideIn{from{transform:translateX(100%);} to{transform:translateX(0);}}
+    #slideControls{position:absolute; bottom:30px; left:50%; transform:translateX(-50%); display:flex; gap:15px;}
+    #slideControls button{background:var(--accent); color:#fff; border:none; padding:10px 18px; border-radius:25px; cursor:pointer; font-size:14px;}
+    #exitSlide{position:absolute; top:20px; right:25px; color:#fff; font-size:2rem; cursor:pointer;}
+
+    /* Müzik butonu */
+    .audio-btn{position:fixed; bottom:25px; right:25px; z-index:9999; background:var(--accent); border:none; color:#fff; padding:12px 20px; border-radius:30px; cursor:pointer; font-size:15px; box-shadow:0 0 15px rgba(255,77,132,.5);}
+    
+    /* Gizli YouTube arka plan */
+    #bgMusicTube{position:absolute; width:1px; height:1px; opacity:0; pointer-events:none;}
+  </style>
+</head>
+<body>
+
+  <!-- Açılış kalp 10 saniye -->
+  <div id="splash">
+    <div class="heart"></div>
+    <p>Öncelikle merhaba benim güzel sevgilim, seni bu dünyadaki her şeyden çok seviyorum.</p>
+  </div>
+
+  <!-- Yazılar -->
+  <header>
+    <h1>İyi ki doğdun, müstakbel karım</h1>
+  </header>
+
+  <div class="love-text">
+    Bazen istemeden seni kırıyorum, bunun farkındayım ve bana kendini değerli hissetmediğini söylüyorsun. Ama <b>şunu bilmelisin ki sen benim için bu dünyadaki en değerli şeysin.</b><br><br>
+    Sen benim <b>müstakbel karım, nişanlımsın, hayat arkadaşım, ruh eşimsin.</b><br>
+    Sen benim huzur bulduğum yersin. Seninle Valorant’da tanıştık ve bu zamana kadar ilerledik. Başlarda İstanbul’da idin, sürekli gezer eğlenirdik; ama daha sonrasında uzak mesafeye dönüştü, taşındın. Sen, ben ilk başlarda sürekli gelebilirken şimdilerde sürekli gelemiyorum; arada bir gelebiliyorum. Ama <b>üzülme, bu günler geçecek.</b><br><br>
+    Şarkıda da dediği gibi: <i>“Gelip geçer mesafeler, uzak yakın ne fark eder; kalbim seninle atar, sensiz derbeder.”</i><br><br>
+    Seninle birlikte güzel ve büyük hayallerimiz var: <b>evleneceğiz, güzel bir yuva kuracağız, çocuklarımızla birlikte mutlu bir gelecek olacak.</b><br>
+    Sana her zaman “mutlu olacağız” diyemem; illaki üzüleceğiz, ağlayacağız; ama önemli olan her seferinde <b>beraber</b> olmak.<br><br>
+    <b>İyi ki yıllar önce doğmuşsun, iyi ki bu dünyaya gelmişsin.</b> Biliyorum, hâlâ tam olarak doğum gününü kutlamadım. Seni çok seviyorum, güzel karım. <b>İyi ki doğdun!</b> Birlikte nice doğum günlerine…
+  </div>
+
+  <!-- Fotoğraf galerisi (41 resim) -->
+  <section class="gallery" id="autoGallery"></section>
+
+  <footer>2025 • Kalbimizin şifresi: Sonsuzluk</footer>
+
+  <!-- Gizli YouTube arka plan -->
+  <div id="bgMusicTube">
+    <iframe src="https://www.youtube.com/embed/Wdc-Hzew9G8?autoplay=1&mute=1&loop=1&playlist=Wdc-Hzew9G8&rel=0&modestbranding=1&showinfo=0"
+            frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>
+  </div>
+
+  <!-- Kendi mp3’ün varsa -->
+  <audio id="bgMusic" loop>
+    <source src="muzik.mp3" type="audio/mpeg">
+  </audio>
+  <button class="audio-btn" id="sesBtn">♪ Sesi Aç</button>
+
+  <!-- Slayt ekranı -->
+  <div id="slideScreen">
+    <img id="slideImg" src="" alt="">
+    <span id="exitSlide">&times;</span>
+    <div id="slideControls">
+      <button id="prevBtn">◀ Geri</button>
+      <button id="playPauseBtn">❚❚ Duraklat</button>
+      <button id="nextBtn">İleri ▶</button>
+    </div>
+  </div>
+
+  <script>
+    // 1) 41 fotoğraf oluştur
+    const totalFoto = 41;
+    const box = document.getElementById('autoGallery');
+    for (let i = 1; i <= totalFoto; i++) {
+      box.insertAdjacentHTML('beforeend', `<img src="foto${i}.jpg" alt="Anı ${i}">`);
+    }
+
+    // 2) Slayt değişkenleri
+    const imgs = box.querySelectorAll('img');
+    const slideScreen = document.getElementById('slideScreen');
+    const slideImg = document.getElementById('slideImg');
+    const exitSlide = document.getElementById('exitSlide');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const playPauseBtn = document.getElementById('playPauseBtn');
+    let currentIndex = 0;
+    let timer = null;
+    const delay = 5000;
+
+    function openSlide(index) {
+      currentIndex = index;
+      slideImg.src = imgs[currentIndex].src;
+      slideScreen.style.display = 'block';
+      document.body.style.overflow = 'hidden';
+      play();
+    }
+    function closeSlide() {
+      slideScreen.style.display = 'none';
+      document.body.style.overflow = '';
+      pause();
+    }
+    function play() {
+      playPauseBtn.textContent = '❚❚ Duraklat';
+      timer = setInterval(() => next(), delay);
+    }
+    function pause() {
+      playPauseBtn.textContent = '▶ Oynat';
+      clearInterval(timer);
+    }
+    function next() {
+      currentIndex = (currentIndex + 1) % imgs.length;
+      slideImg.src = imgs[currentIndex].src;
+    }
+    function prev() {
+      currentIndex = (currentIndex - 1 + imgs.length) % imgs.length;
+      slideImg.src = imgs[currentIndex].src;
+    }
+
+    exitSlide.addEventListener('click', closeSlide);
+    nextBtn.addEventListener('click', () => { next(); pause(); });
+    prevBtn.addEventListener('click', () => { prev(); pause(); });
+    playPauseBtn.addEventListener('click', () => (timer ? pause() : play()));
+    imgs.forEach((img, idx) => img.addEventListener('click', () => openSlide(idx)));
+
+    // 3) 2 dakika (120 sn) sonra otomatik slayt
+    setTimeout(() => { if (imgs.length) openSlide(0); }, 120000);
+
+    // 4) Müzik butonu
+    const audioLocal = document.getElementById('bgMusic');
+    const btn = document.getElementById('sesBtn');
+    let playing = false;
+    btn.addEventListener('click', () => {
+      if (!playing) {
+        audioLocal.play();
+        btn.textContent = '♪ Sesi Kapat';
+        playing = true;
+      } else {
+        audioLocal.pause();
+        btn.textContent = '♪ Sesi Aç';
+        playing = false;
+      }
+    });
+  </script>
+</body>
+</html>
